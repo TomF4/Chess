@@ -46,7 +46,7 @@ public class Knight extends Piece{
             System.out.println("All moves" + potentialMove);
         }
         System.out.println("Possible Moves" + moves.toString());
-        return null;
+        return moves;
     }
 
     @Override
