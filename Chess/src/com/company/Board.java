@@ -4,8 +4,9 @@ import com.company.Pieces.*;
 /*
 
     Creates the board.
-
     2d array of tiles
+
+    base Board Class seems to be complete.
 
     tf 05/08/2021
 */
@@ -13,12 +14,12 @@ import com.company.Pieces.*;
 public class Board
 {
 
-    private final Tile[][] boardArr = new Tile[64][64];
+    //board dimensions
+    private final int ROWS    = 8;
+    private final int COLUMNS = 8;
 
-    /**
-     * minus 1 for array
-     */
-    private int boardSize = 8 - 1;
+    //board array
+    private final Tile[][] boardArr = new Tile[ROWS][COLUMNS];
 
     /**
      * constructor just initialises the board.
@@ -35,24 +36,31 @@ public class Board
      */
     public void initBoard()
     {
-        //White Side
-        boardArr[0][0] = new Tile(0,0,new Pawn(true,0,0));
-        boardArr[1][0] = new Tile(1,0,new Pawn(true,1,0));
-        boardArr[2][0] = new Tile(2,0,new Pawn(true,2,0));
-        boardArr[3][0] = new Tile(3,0,new Pawn(true,3,0));
-        boardArr[4][0] = new Tile(4,0,new Pawn(true,4,0));
-        boardArr[5][0] = new Tile(5,0,new Pawn(true,5,0));
-        boardArr[6][0] = new Tile(6,0,new Pawn(true,6,0));
-        boardArr[7][0] = new Tile(7,0,new Pawn(true,7,0));
+        for (int i = 0; i < ROWS;i++)
+            for(int j = 0; j < COLUMNS; j++){
+                System.out.println("i"+i);
+                System.out.println("j"+j);
+                boardArr[i][j] = new Tile(i,j,null);
+            }
 
-        boardArr[0][1] = new Tile(0,1,new Rook  (true,0,1));
-        boardArr[1][1] = new Tile(1,1,new Knight(true,1,1));
-        boardArr[2][1] = new Tile(2,1,new Bishop(true,2,1));
-        boardArr[3][1] = new Tile(3,1,new Queen (true,3,1));
-        boardArr[4][1] = new Tile(4,1,new King  (true,4,1));
-        boardArr[5][1] = new Tile(5,1,new Bishop(true,5,1));
-        boardArr[6][1] = new Tile(6,1,new Knight(true,6,1));
-        boardArr[7][1] = new Tile(7,1,new Rook  (true,7,1));
+        //White Side
+        boardArr[0][0] = new Tile(0,0,new Rook  (true,0,0));
+        boardArr[1][0] = new Tile(1,0,new Knight(true,1,0));
+        boardArr[2][0] = new Tile(2,0,new Bishop(true,2,0));
+        boardArr[3][0] = new Tile(3,0,new Queen (true,3,0));
+        boardArr[4][0] = new Tile(4,0,new King  (true,4,0));
+        boardArr[5][0] = new Tile(5,0,new Bishop(true,5,0));
+        boardArr[6][0] = new Tile(6,0,new Knight(true,6,0));
+        boardArr[7][0] = new Tile(7,0,new Rook  (true,7,0));
+
+        boardArr[0][1] = new Tile(0,1,new Pawn(true,0,1));
+        boardArr[1][1] = new Tile(1,1,new Pawn(true,1,1));
+        boardArr[2][1] = new Tile(2,1,new Pawn(true,2,1));
+        boardArr[3][1] = new Tile(3,1,new Pawn(true,3,1));
+        boardArr[4][1] = new Tile(4,1,new Pawn(true,4,1));
+        boardArr[5][1] = new Tile(5,1,new Pawn(true,5,1));
+        boardArr[6][1] = new Tile(6,1,new Pawn(true,6,1));
+        boardArr[7][1] = new Tile(7,1,new Pawn(true,7,1));
 
         //Black Side
         boardArr[0][6] = new Tile(0,6, new Pawn(false,0,6));
@@ -72,10 +80,8 @@ public class Board
         boardArr[5][7] = new Tile(5,7, new Bishop(false,5,7));
         boardArr[6][7] = new Tile(6,7, new Knight(false,6,7));
         boardArr[7][7] = new Tile(7,7, new Rook  (false,7,7));
+
     }
-
-    public int getBoardSize(){return boardSize;}
-
     /**
      * Test method Delete l8 i guess
      * @return returns the board array

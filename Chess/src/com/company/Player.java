@@ -10,13 +10,13 @@ import com.company.Pieces.Piece;
 
 public class Player {
 
-    public boolean isComputer;
+    public boolean isWhite;
     public boolean isHuman;
 
-    public Player(boolean isComputer,boolean isHuman)
+    public Player(boolean isWhite,boolean isHuman)
     {
-        this.isComputer = isComputer;
-        this.isHuman    = isHuman;
+        this.isWhite = isWhite;
+        this.isHuman = isHuman;
     }
 
     public void move(Piece piece,Position start, Position end)

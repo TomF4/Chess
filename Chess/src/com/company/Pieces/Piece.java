@@ -21,10 +21,12 @@ public abstract class Piece
     /**
      * @param isWhite is white or not
      */
-    public Piece(boolean isWhite) {
+    public Piece(boolean isWhite)
+    {
         m_isWhite = isWhite;
     }
-    public Piece(boolean isWhite,int x,int y){
+    public Piece(boolean isWhite,int x,int y)
+    {
         m_isWhite = isWhite;
         m_pos.setX(x);
         m_pos.setY(y);

@@ -1,8 +1,11 @@
 package com.company.Test;
 
+
 import com.company.Board;
-import com.company.Pieces.Pawn;
+import com.company.Pieces.*;
+import com.company.Player;
 import com.company.Tile;
+
 
 import java.util.Arrays;
 
@@ -31,5 +34,10 @@ public class PieceTest {
         System.out.println(Arrays.deepToString(boardArray));
         System.out.println("=======================");
         System.out.println("=======================\n");
+
+
+        //player test
+        Player player1 = new Player(false,true);
+
     }
 }

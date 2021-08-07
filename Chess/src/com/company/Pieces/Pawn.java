@@ -14,6 +14,8 @@ public class Pawn extends Piece{
     public Pawn(boolean isWhite,int x,int y){
         super(isWhite, x, y);
     }
+
+    
     //TODO CHECK WHETHER MOVE IS VALID
     @Override
     public boolean validMove(Board board, Tile start, Tile end) {
@@ -27,11 +29,11 @@ public class Pawn extends Piece{
         if(!this.isWhite() && end.getPiece().getPos().getY() > start.getPiece().getPos().getY())
             return false;
         //if greater than the current board size return false.
-        if(
-                start.getPiece().getPos().getY() > board.getBoardSize() &&
-                start.getPiece().getPos().getX() > board.getBoardSize() &&
-                end.getPiece().getPos().getX() > board.getBoardSize() && end.getPiece().getPos().getY() > board.getBoardSize()
-        ) return false;
+       //if(
+       //        start.getPiece().getPos().getY() > board.getBoardSize() &&
+       //        start.getPiece().getPos().getX() > board.getBoardSize() &&
+       //        end.getPiece().getPos().getX() > board.getBoardSize() && end.getPiece().getPos().getY() > board.getBoardSize()
+       //) return false;
 
         //if passed everything return true.
         return true;
