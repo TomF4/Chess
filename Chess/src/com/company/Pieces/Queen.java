@@ -13,9 +13,10 @@ public class Queen extends Piece{
     public Queen(boolean isWhite,int x,int y){
         super(isWhite, x, y);
     }
-    //TODO CHECK WHETHER MOVE IS VALID
+
     @Override
-    public boolean validMove(Board board, Tile start, Tile end) {
-        return false;
+    public String toString() {
+        return "Queen" + super.toString();
     }
+
 }

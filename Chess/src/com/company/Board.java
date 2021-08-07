@@ -21,9 +21,7 @@ public class Board
     //board array
     private final Tile[][] boardArr = new Tile[ROWS][COLUMNS];
 
-    /**
-     * constructor just initialises the board.
-     */
+    //constructor just initialises the board.
     public Board(){
         initBoard();
     }
@@ -37,11 +35,8 @@ public class Board
     public void initBoard()
     {
         for (int i = 0; i < ROWS;i++)
-            for(int j = 0; j < COLUMNS; j++){
-                System.out.println("i"+i);
-                System.out.println("j"+j);
+            for(int j = 0; j < COLUMNS; j++)
                 boardArr[i][j] = new Tile(i,j,null);
-            }
 
         //White Side
         boardArr[0][0] = new Tile(0,0,new Rook  (true,0,0));

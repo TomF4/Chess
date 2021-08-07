@@ -11,13 +11,12 @@ public class PawnTest {
 
         Tile[][] testArray;
 
-
         System.out.println("==============================");
         System.out.println("=============Test=============");
         Board board = new Board();
         testArray = board.returnArr();
         Pawn testPawn0;
-        testPawn0 = (Pawn) testArray[0][0].getPiece();
+        testPawn0 = (Pawn) testArray[1][1].getPiece();
         System.out.println(testPawn0);
     }
 }

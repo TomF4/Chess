@@ -41,22 +41,11 @@ public abstract class Piece
     public void eliminate(){ this.m_isEliminated = true; }
     public void setPos(int x,int y) { this.m_pos.setX(x);this.m_pos.setY(y); }
 
-    /**
-     * Checks to see whether a move is valid.
-     * @param board takes in current board
-     * @param start begining tile
-     * @param end   finishing tile
-     * @return true if valid move
-     */
-    public abstract boolean validMove(Board board, Tile start, Tile end);
-
-
-
     @Override
     public String toString() {
         return "{" +
                 "White=" + m_isWhite + "," +
                 "Eliminated=" + m_isEliminated + "," +
-                "pos=" + m_pos + "," + '}';
+                 m_pos + "," + '}';
     }
 }

@@ -29,7 +29,7 @@ public class Tile {
     public String toString() {
         return "Tile{" +
                 "tilePos=" + m_tilePos +
-                ", piece=" + m_piece +
-                '}';
+                "," + m_piece +
+                '}'+"\n";
     }
 }
