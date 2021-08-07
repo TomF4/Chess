@@ -46,7 +46,7 @@ public abstract class Piece
     /**
      * Finds all legal moves a
      * @param board current board
-     * @return A list of positions that are WITHIN the size of the board.
+     * @return A list of positions that are WITHIN the size of the board
      */
     public abstract List<Position> findValidMoves(Board board);
 
