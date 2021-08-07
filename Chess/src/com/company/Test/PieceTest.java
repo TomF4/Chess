@@ -34,10 +34,22 @@ public class PieceTest {
         System.out.println("=======================");
         System.out.println("=======================\n");
 
+
+        System.out.println("=======================");
+        System.out.println("=======Knight Test======");
         Knight knight;
         knight = (Knight) boardArray[1][0].getPiece();
-        System.out.println("=---=----=---=");
         knight.findValidMoves(board);
+        System.out.println("=======================");
+        System.out.println("=======================\n");
+
+        System.out.println("=======================");
+        System.out.println("=======Pawn Test======");
+        Pawn pawn;
+        pawn = (Pawn) boardArray[1][1].getPiece();
+        pawn.findValidMoves(board);
+        System.out.println("=======================");
+        System.out.println("=======================\n");
 
         //player test
         Player player1 = new Player(false,true);
