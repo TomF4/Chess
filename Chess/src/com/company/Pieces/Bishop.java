@@ -1,8 +1,7 @@
 package com.company.Pieces;
 
 import com.company.Board;
-import com.company.Move;
-import com.company.Tile;
+import com.company.Position;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class Bishop extends Piece{
     }
 
     @Override
-    public List<Move> findValidMoves(Board board) {
+    public List<Position> findValidMoves(Board board) {
         return null;
     }
 

@@ -1,9 +1,7 @@
 package com.company.Pieces;
 
 import com.company.Board;
-import com.company.Move;
 import com.company.Position;
-import com.company.Tile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,14 +33,19 @@ public class Knight extends Piece{
     };
 
     @Override
-    public List<Move> findValidMoves(Board board) {
-        final List<Move> moves = new ArrayList<>();
+    public List<Position> findValidMoves(Board board) {
+        final List<Position> moves = new ArrayList<>();
         Position potentialMove;
 
         for(Position pos: knightMoves){
             potentialMove = Position.add(this.getPos(),pos);
-            System.out.println(potentialMove);
+
+            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0){
+                moves.add(potentialMove);
+            }
+            System.out.println("All moves" + potentialMove);
         }
+        System.out.println("Possible Moves" + moves.toString());
         return null;
     }
 
