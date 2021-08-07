@@ -28,6 +28,11 @@ public class Position
     public void setX  (int x){ m_x = x; }
     public void setY  (int y){ m_y = y; }
 
+    /**
+     * static add two vectors
+     */
+    public static Position add(Position posA,Position posB) { return new Position(posA.getX()+posB.getX(),posA.getY()+posB.getY()); }
+
 
     @Override
     public String toString() {

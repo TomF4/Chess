@@ -6,7 +6,6 @@ import com.company.Pieces.*;
 import com.company.Player;
 import com.company.Tile;
 
-
 import java.util.Arrays;
 
 public class PieceTest {
@@ -30,14 +29,17 @@ public class PieceTest {
         System.out.println("=======================");
         System.out.println("=======Board Test======");
         Board board = new Board();
-        boardArray = board.returnArr();
+        boardArray  = board.returnArr();
         System.out.println(Arrays.deepToString(boardArray));
         System.out.println("=======================");
         System.out.println("=======================\n");
 
+        Knight knight;
+        knight = (Knight) boardArray[1][0].getPiece();
+        System.out.println("=---=----=---=");
+        knight.findValidMoves(board);
 
         //player test
         Player player1 = new Player(false,true);
-
     }
 }

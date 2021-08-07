@@ -1,7 +1,10 @@
 package com.company.Pieces;
 
 import com.company.Board;
+import com.company.Move;
 import com.company.Tile;
+
+import java.util.List;
 
 public class Bishop extends Piece{
 
@@ -15,7 +18,10 @@ public class Bishop extends Piece{
         super(isWhite, x, y);
     }
 
-
+    @Override
+    public List<Move> findValidMoves(Board board) {
+        return null;
+    }
 
     @Override
     public String toString() {

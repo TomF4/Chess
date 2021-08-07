@@ -1,7 +1,10 @@
 package com.company.Pieces;
 
 import com.company.Board;
+import com.company.Move;
 import com.company.Tile;
+
+import java.util.List;
 
 public class Queen extends Piece{
     /**
@@ -15,8 +18,12 @@ public class Queen extends Piece{
     }
 
     @Override
+    public List<Move> findValidMoves(Board board) {
+        return null;
+    }
+
+    @Override
     public String toString() {
         return "Queen" + super.toString();
     }
-
 }

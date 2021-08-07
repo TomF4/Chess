@@ -13,15 +13,12 @@ public class Player {
     public boolean isWhite;
     public boolean isHuman;
 
-    public Player(boolean isWhite,boolean isHuman)
-    {
+    public Player(boolean isWhite,boolean isHuman) {
         this.isWhite = isWhite;
         this.isHuman = isHuman;
     }
 
-    public void move(Piece piece,Position start, Position end)
-    {
+    public void move(Piece piece,Position start, Position end) {
 
     }
-
 }

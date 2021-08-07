@@ -39,33 +39,33 @@ public class Board
                 boardArr[i][j] = new Tile(i,j,null);
 
         //White Side
-        boardArr[0][0] = new Tile(0,0,new Rook  (true,0,0));
-        boardArr[1][0] = new Tile(1,0,new Knight(true,1,0));
-        boardArr[2][0] = new Tile(2,0,new Bishop(true,2,0));
-        boardArr[3][0] = new Tile(3,0,new Queen (true,3,0));
-        boardArr[4][0] = new Tile(4,0,new King  (true,4,0));
-        boardArr[5][0] = new Tile(5,0,new Bishop(true,5,0));
-        boardArr[6][0] = new Tile(6,0,new Knight(true,6,0));
-        boardArr[7][0] = new Tile(7,0,new Rook  (true,7,0));
+        boardArr[0][0] = new Tile(0,0,new Rook   (true,0,0));
+        boardArr[1][0] = new Tile(1,0,new Knight (true,1,0));
+        boardArr[2][0] = new Tile(2,0,new Bishop (true,2,0));
+        boardArr[3][0] = new Tile(3,0,new Queen  (true,3,0));
+        boardArr[4][0] = new Tile(4,0,new King   (true,4,0));
+        boardArr[5][0] = new Tile(5,0,new Bishop (true,5,0));
+        boardArr[6][0] = new Tile(6,0,new Knight (true,6,0));
+        boardArr[7][0] = new Tile(7,0,new Rook   (true,7,0));
 
-        boardArr[0][1] = new Tile(0,1,new Pawn(true,0,1));
-        boardArr[1][1] = new Tile(1,1,new Pawn(true,1,1));
-        boardArr[2][1] = new Tile(2,1,new Pawn(true,2,1));
-        boardArr[3][1] = new Tile(3,1,new Pawn(true,3,1));
-        boardArr[4][1] = new Tile(4,1,new Pawn(true,4,1));
-        boardArr[5][1] = new Tile(5,1,new Pawn(true,5,1));
-        boardArr[6][1] = new Tile(6,1,new Pawn(true,6,1));
-        boardArr[7][1] = new Tile(7,1,new Pawn(true,7,1));
+        boardArr[0][1] = new Tile(0,1,new Pawn   (true,0,1));
+        boardArr[1][1] = new Tile(1,1,new Pawn   (true,1,1));
+        boardArr[2][1] = new Tile(2,1,new Pawn   (true,2,1));
+        boardArr[3][1] = new Tile(3,1,new Pawn   (true,3,1));
+        boardArr[4][1] = new Tile(4,1,new Pawn   (true,4,1));
+        boardArr[5][1] = new Tile(5,1,new Pawn   (true,5,1));
+        boardArr[6][1] = new Tile(6,1,new Pawn   (true,6,1));
+        boardArr[7][1] = new Tile(7,1,new Pawn   (true,7,1));
 
         //Black Side
-        boardArr[0][6] = new Tile(0,6, new Pawn(false,0,6));
-        boardArr[1][6] = new Tile(1,6, new Pawn(false,1,6));
-        boardArr[2][6] = new Tile(2,6, new Pawn(false,2,6));
-        boardArr[3][6] = new Tile(3,6, new Pawn(false,3,6));
-        boardArr[4][6] = new Tile(4,6, new Pawn(false,4,6));
-        boardArr[5][6] = new Tile(5,6, new Pawn(false,5,6));
-        boardArr[6][6] = new Tile(6,6, new Pawn(false,6,6));
-        boardArr[7][6] = new Tile(7,6, new Pawn(false,7,6));
+        boardArr[0][6] = new Tile(0,6, new Pawn  (false,0,6));
+        boardArr[1][6] = new Tile(1,6, new Pawn  (false,1,6));
+        boardArr[2][6] = new Tile(2,6, new Pawn  (false,2,6));
+        boardArr[3][6] = new Tile(3,6, new Pawn  (false,3,6));
+        boardArr[4][6] = new Tile(4,6, new Pawn  (false,4,6));
+        boardArr[5][6] = new Tile(5,6, new Pawn  (false,5,6));
+        boardArr[6][6] = new Tile(6,6, new Pawn  (false,6,6));
+        boardArr[7][6] = new Tile(7,6, new Pawn  (false,7,6));
 
         boardArr[0][7] = new Tile(0,7, new Rook  (false,0,7));
         boardArr[1][7] = new Tile(1,7, new Knight(false,1,7));
@@ -75,8 +75,19 @@ public class Board
         boardArr[5][7] = new Tile(5,7, new Bishop(false,5,7));
         boardArr[6][7] = new Tile(6,7, new Knight(false,6,7));
         boardArr[7][7] = new Tile(7,7, new Rook  (false,7,7));
-
     }
+
+
+    /**
+     * Return a tile
+     * @param pos position (x,y)
+     * @return Tile from board array
+     */
+    public Tile getTile(Position pos){
+        return boardArr[pos.getX()][pos.getY()];
+    }
+
+
     /**
      * Test method Delete l8 i guess
      * @return returns the board array
@@ -85,4 +96,6 @@ public class Board
     {
         return boardArr;
     }
+
+
 }
