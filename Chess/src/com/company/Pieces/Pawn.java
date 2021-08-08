@@ -48,9 +48,7 @@ public class Pawn extends Piece{
                 else if(!this.isWhite() && pos.getY() < 0)
                     moves.add(potentialMove);
             }
-            System.out.println("All moves" + potentialMove);    /// TESTING LINES
         }
-        System.out.println("Possible Moves" + moves.toString());/// TESTING LINES
         return moves;
     }
 

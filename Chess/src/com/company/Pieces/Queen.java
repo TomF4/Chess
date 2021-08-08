@@ -43,7 +43,6 @@ public class Queen extends Piece{
         //add mvoes to queen moves
         queenMoves.addAll(rookMoves);
         queenMoves.addAll(bishopMoves);
-        System.out.println("Possible Moves"+queenMoves);
         return queenMoves;
     }
 

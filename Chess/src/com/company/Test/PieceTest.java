@@ -39,7 +39,7 @@ public class PieceTest {
         System.out.println("=======Knight Test======");
         Knight knight;
         knight = (Knight) boardArray[1][0].getPiece();
-        knight.findValidMoves(board);
+        knight.printValidMoves(board);
         System.out.println("=======================");
         System.out.println("=======================\n");
 
@@ -47,7 +47,7 @@ public class PieceTest {
         System.out.println("=======Pawn Test======");
         Pawn pawn;
         pawn = (Pawn) boardArray[1][1].getPiece();
-        pawn.findValidMoves(board);
+        pawn.printValidMoves(board);
         System.out.println("=======================");
         System.out.println("=======================\n");
 
@@ -55,7 +55,7 @@ public class PieceTest {
         System.out.println("=======Rook Test======");
         Rook rook;
         rook = (Rook) boardArray[7][7].getPiece();
-        rook.findValidMoves(board);
+        rook.printValidMoves(board);
         System.out.println("=======================");
         System.out.println("=======================\n");
 
@@ -63,7 +63,7 @@ public class PieceTest {
         System.out.println("=======Bishop Test======");
         Bishop bishop;
         bishop = (Bishop) boardArray[2][0].getPiece();
-        bishop.findValidMoves(board);
+        bishop.printValidMoves(board);
         System.out.println("=======================");
         System.out.println("=======================\n");
 
@@ -71,7 +71,7 @@ public class PieceTest {
         System.out.println("=======Queen Test======");
         Queen queen;
         queen = (Queen) boardArray[3][0].getPiece();
-        queen.findValidMoves(board);
+        queen.printValidMoves(board);
         System.out.println("=======================");
         System.out.println("=======================\n");
 

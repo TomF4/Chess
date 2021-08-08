@@ -53,6 +53,10 @@ public abstract class Piece
      */
     public abstract List<Position> findValidMoves(Board board);
 
+    public void printValidMoves(Board board){
+        System.out.println("Possible Moves"+this.findValidMoves(board).toString());
+    }
+
 
     @Override
     public String toString() {

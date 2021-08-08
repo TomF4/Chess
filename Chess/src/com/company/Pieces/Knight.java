@@ -43,9 +43,7 @@ public class Knight extends Piece{
             potentialMove = this.getPos().add(pos);
             if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8)
                 moves.add(potentialMove);
-            System.out.println("All moves" + potentialMove);     /// TESTING LINES
         }
-        System.out.println("Possible Moves" + moves.toString()); /// TESTING LINES
         return moves;
     }
 
