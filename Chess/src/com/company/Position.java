@@ -29,9 +29,19 @@ public class Position
     public void setY  (int y){ m_y = y; }
 
     /**
-     * static add two vectors
+     * Add a position to another
+     * @param posA position to be added to this
+     * @return return a new position
      */
-    public static Position add(Position posA,Position posB) { return new Position(posA.getX()+posB.getX(),posA.getY()+posB.getY()); }
+    public Position add(Position posA) { return new Position(this.getX()+posA.getX(),this.getY()+posA.getY()); }
+
+    /**
+     * create a new position from adding ints to x,y
+     * @param x x to be added
+     * @param y y to be added
+     * @return new position
+     */
+    public Position add(int x,int y) { return new Position(this.getX()+x,this.getY()+y); }
 
 
     @Override

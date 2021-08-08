@@ -17,7 +17,7 @@ public class Board
     //board dimensions
     private final int ROWS    = 8;
     private final int COLUMNS = 8;
-
+    public final int SIZE     = 8;
     //board array
     private final Tile[][] boardArr = new Tile[ROWS][COLUMNS];
 

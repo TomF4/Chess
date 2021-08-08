@@ -4,7 +4,9 @@ import com.company.Board;
 import com.company.Position;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Pawn extends Piece{
 
@@ -28,7 +30,6 @@ public class Pawn extends Piece{
             new Position(1,1)   //Attack
     };
 
-
     /**
      * Pawns can only move forward atm. (no special moves)
      * @param board current board
@@ -40,16 +41,16 @@ public class Pawn extends Piece{
         Position potentialMove;
 
         for(Position pos: pawnMoves){
-            potentialMove = Position.add(this.getPos(),pos);
-            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0) { //within board
+            potentialMove = this.getPos().add(pos);
+            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8) { //within board
                 if(this.isWhite() && pos.getY() > 0)
                     moves.add(potentialMove);
                 else if(!this.isWhite() && pos.getY() < 0)
                     moves.add(potentialMove);
             }
-            System.out.println("All moves" + potentialMove);
+            System.out.println("All moves" + potentialMove);    /// TESTING LINES
         }
-        System.out.println("Possible Moves" + moves.toString());
+        System.out.println("Possible Moves" + moves.toString());/// TESTING LINES
         return moves;
     }
 

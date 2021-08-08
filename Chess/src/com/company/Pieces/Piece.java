@@ -8,6 +8,9 @@ import java.util.List;
 /*
    abstract class for all pieces
 
+    piece class does not handle validity of moves. Only where it can move. it does only return moves on board space.
+    eg no check handling etc.
+
    Thomas Franks
    05/08/2021
  */

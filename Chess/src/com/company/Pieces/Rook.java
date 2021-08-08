@@ -3,6 +3,7 @@ package com.company.Pieces;
 import com.company.Board;
 import com.company.Position;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Rook extends Piece{
@@ -17,9 +18,42 @@ public class Rook extends Piece{
         super(isWhite, x, y);
     }
 
+
+    //TODO is there a better way than 4 for loops
+    /**
+     * Loops from current pos to find all moves
+     * @param board current board
+     * @return rook moves
+     */
     @Override
     public List<Position> findValidMoves(Board board) {
-        return null;
+        final List<Position> moves = new ArrayList<>();
+        Position potentialMove;
+        //positive right
+        for(int i = this.getPos().getX(); i < board.SIZE;i++){
+            potentialMove = this.getPos().add(i,0);
+            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8)
+                moves.add(potentialMove);
+        }
+        //negative left
+        for(int i = this.getPos().getX();i > 0; i--){
+            potentialMove = this.getPos().add(-i,0);
+            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8)
+                moves.add(potentialMove);
+        }
+        //positive up
+        for(int i = this.getPos().getY(); i < board.SIZE;i++){
+            potentialMove = this.getPos().add(0,i);
+            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8)
+                moves.add(potentialMove);
+        }
+        //negative down
+        for(int i = this.getPos().getY();i > 0; i--){
+            potentialMove = this.getPos().add(0,-i);
+            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8)
+                moves.add(potentialMove);
+        }
+        return moves;
     }
 
     @Override

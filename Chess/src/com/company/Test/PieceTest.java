@@ -51,6 +51,30 @@ public class PieceTest {
         System.out.println("=======================");
         System.out.println("=======================\n");
 
+        System.out.println("=======================");
+        System.out.println("=======Rook Test======");
+        Rook rook;
+        rook = (Rook) boardArray[7][7].getPiece();
+        rook.findValidMoves(board);
+        System.out.println("=======================");
+        System.out.println("=======================\n");
+
+        System.out.println("=======================");
+        System.out.println("=======Bishop Test======");
+        Bishop bishop;
+        bishop = (Bishop) boardArray[2][0].getPiece();
+        bishop.findValidMoves(board);
+        System.out.println("=======================");
+        System.out.println("=======================\n");
+
+        System.out.println("=======================");
+        System.out.println("=======Queen Test======");
+        Queen queen;
+        queen = (Queen) boardArray[3][0].getPiece();
+        queen.findValidMoves(board);
+        System.out.println("=======================");
+        System.out.println("=======================\n");
+
         //player test
         Player player1 = new Player(false,true);
     }

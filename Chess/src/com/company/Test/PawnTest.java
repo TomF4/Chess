@@ -18,5 +18,9 @@ public class PawnTest {
         Pawn testPawn0;
         testPawn0 = (Pawn) testArray[1][1].getPiece();
         System.out.println(testPawn0);
+
+        for (int i = 0; i < 4; i++) {
+            System.out.println(i);
+        }
     }
 }
