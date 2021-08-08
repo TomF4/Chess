@@ -74,6 +74,7 @@ public class PieceTest {
         queen.printValidMoves(board);
         System.out.println("=======================");
         System.out.println("=======================\n");
+        System.out.println("");
 
         //player test
         Player player1 = new Player(false,true);
