@@ -8,7 +8,8 @@ package com.company;
 
 import com.company.Pieces.Piece;
 
-public class Player {
+public class Player
+{
 
     private boolean isWhite;
     private Piece[] pieces;

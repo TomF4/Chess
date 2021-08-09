@@ -37,7 +37,7 @@ public class King extends Piece{
 
         for(Position pos: this.kingMoves){
             potentialMove = this.getPos().add(pos);
-            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8) { //within board
+            if(isWithinBoard(potentialMove)) { //within board
                 moves.add(potentialMove);
             }
         }

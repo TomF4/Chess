@@ -32,25 +32,25 @@ public class Rook extends Piece{
         //positive right
         for(int i = this.getPos().getX(); i < board.SIZE;i++){
             potentialMove = this.getPos().add(i,0);
-            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8)
+            if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         //negative left
         for(int i = this.getPos().getX();i > 0; i--){
             potentialMove = this.getPos().add(-i,0);
-            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8)
+            if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         //positive up
         for(int i = this.getPos().getY(); i < board.SIZE;i++){
             potentialMove = this.getPos().add(0,i);
-            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8)
+            if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         //negative down
         for(int i = this.getPos().getY();i > 0; i--){
             potentialMove = this.getPos().add(0,-i);
-            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8)
+            if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         return moves;

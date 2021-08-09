@@ -57,6 +57,9 @@ public abstract class Piece
         System.out.println("Possible Moves"+this.findValidMoves(board).toString());
     }
 
+    public boolean isWithinBoard(Position position) {
+        return position.getY() >= 0 && position.getX() >= 0 && position.getX() < 8 && position.getY() < 8; //within board
+    }
 
     @Override
     public String toString() {

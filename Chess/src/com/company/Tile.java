@@ -9,7 +9,8 @@ import com.company.Pieces.Piece;
     tf 05/08/2021
  */
 
-public class Tile {
+public class Tile
+{
 
     Position m_tilePos = new Position();
     Piece    m_piece;

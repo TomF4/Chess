@@ -42,7 +42,7 @@ public class Pawn extends Piece{
 
         for(Position pos: pawnMoves){
             potentialMove = this.getPos().add(pos);
-            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8) { //within board
+            if(isWithinBoard(potentialMove)) { //within board
                 if(this.isWhite() && pos.getY() > 0)
                     moves.add(potentialMove);
                 else if(!this.isWhite() && pos.getY() < 0)

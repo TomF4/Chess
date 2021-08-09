@@ -79,7 +79,8 @@ public class Board
         boardArr[6][7] = new Tile(6,7, new Knight(false,6,7));
         boardArr[7][7] = new Tile(7,7, new Rook  (false,7,7));
     }
-    public ArrayList<Piece> getWhitePieces(){
+    public ArrayList<Piece> getWhitePieces()
+    {
         ArrayList<Piece> whitePieces = new ArrayList<>();
         for (int i = 0; i < 8; i++)
             whitePieces.add(boardArr[i][0].m_piece);
@@ -87,7 +88,8 @@ public class Board
             whitePieces.add(boardArr[i][1].m_piece);
         return whitePieces;
     }
-    public ArrayList<Piece> getBlackPieces(){
+    public ArrayList<Piece> getBlackPieces()
+    {
         ArrayList<Piece> blackPieces = new ArrayList<>();
         for (int i = 0; i < 8; i++)
             blackPieces.add(boardArr[i][0].m_piece);
@@ -109,10 +111,7 @@ public class Board
      * Test method Delete l8 i guess
      * @return returns the board array
      */
-    public Tile[][] returnArr()
-    {
-        return boardArr;
-    }
+    public Tile[][] returnArr() { return boardArr; }
 
 
 }

@@ -41,7 +41,7 @@ public class Knight extends Piece{
 
         for(Position pos: knightMoves){
             potentialMove = this.getPos().add(pos);
-            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8)
+            if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         return moves;

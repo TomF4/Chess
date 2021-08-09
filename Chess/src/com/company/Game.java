@@ -7,10 +7,22 @@ package com.company;
  */
 
 
-public class Game {
+public class Game
+{
+
+    //enum of game state
+    public enum GameStatus
+    {
+        CHECK,
+        CHECKMATE,
+        DRAW,
+        WIN,
+        LOSS,
+    }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         Board board = new Board();
 
