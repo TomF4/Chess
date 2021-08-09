@@ -70,11 +70,20 @@ public class PieceTest {
         System.out.println("=======================");
         System.out.println("=======Queen Test======");
         Queen queen;
-        queen = (Queen) boardArray[3][0].getPiece();
+        queen = (Queen) boardArray[3][7].getPiece();
         queen.printValidMoves(board);
         System.out.println("=======================");
         System.out.println("=======================\n");
-        System.out.println("");
+
+        System.out.println("=======================");
+        System.out.println("=======King Test======");
+        King king;
+        king = (King) boardArray[4][0].getPiece();
+        king.printValidMoves(board);
+        System.out.println("=======================");
+        System.out.println("=======================\n");
+
+
 
         //player test
         Player player1 = new Player(false,true);

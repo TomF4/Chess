@@ -10,8 +10,10 @@ import com.company.Pieces.Piece;
 
 public class Player {
 
-    public boolean isWhite;
-    public boolean isHuman;
+    private boolean isWhite;
+    private boolean isHuman;
+    private Piece[] pieces;
+    private int score;
 
     public Player(boolean isWhite,boolean isHuman) {
         this.isWhite = isWhite;

@@ -3,9 +3,22 @@ package com.company.Pieces;
 import com.company.Board;
 import com.company.Position;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class King extends Piece{
+
+    private Position[] kingMoves = {
+            new Position(0,1),      //up
+            new Position(1,0),      //right
+            new Position(-1,0),     //left
+            new Position(0,-1),     //down
+            new Position(1,1),      //upright
+            new Position(-1,1),     //upleft
+            new Position(1,-1),     //downright
+            new Position(-1,-1),    //downleft
+    };
+
 
     /**
      * @param isWhite is white or not
@@ -19,7 +32,16 @@ public class King extends Piece{
 
     @Override
     public List<Position> findValidMoves(Board board) {
-        return null;
+        final List<Position> moves = new ArrayList<>();
+        Position potentialMove;
+
+        for(Position pos: this.kingMoves){
+            potentialMove = this.getPos().add(pos);
+            if(potentialMove.getY() >= 0 && potentialMove.getX() >= 0 && potentialMove.getX() < 8 && potentialMove.getY() < 8) { //within board
+                moves.add(potentialMove);
+            }
+        }
+        return moves;
     }
 
 
