@@ -20,7 +20,7 @@ public class Pawn extends Piece{
         super(isWhite, x, y);
     }
 
-    public Position[] pawnMoves =
+    private final Position[] pawnMoves =
     {
             new Position(0,2),  //Moves
             new Position(0,-2), //Moves

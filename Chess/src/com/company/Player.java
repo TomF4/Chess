@@ -11,13 +11,11 @@ import com.company.Pieces.Piece;
 public class Player {
 
     private boolean isWhite;
-    private boolean isHuman;
     private Piece[] pieces;
     private int score;
 
-    public Player(boolean isWhite,boolean isHuman) {
+    public Player(boolean isWhite) {
         this.isWhite = isWhite;
-        this.isHuman = isHuman;
     }
 
     public void move(Piece piece,Position start, Position end) {

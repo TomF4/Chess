@@ -8,7 +8,7 @@ import java.util.List;
 
 public class King extends Piece{
 
-    private Position[] kingMoves = {
+    private final Position[] kingMoves = {
             new Position(0,1),      //up
             new Position(1,0),      //right
             new Position(-1,0),     //left

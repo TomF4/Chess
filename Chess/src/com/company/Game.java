@@ -14,8 +14,8 @@ public class Game {
 
         Board board = new Board();
 
-        Player player1 = new Player(true,true);
-        Player player2 = new Player(true,true);
+        Player player1 = new Player(true);
+        Player player2 = new Player(true);
 
         //game loop
         while(true)

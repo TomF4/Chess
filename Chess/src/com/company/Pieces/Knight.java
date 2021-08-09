@@ -21,7 +21,7 @@ public class Knight extends Piece{
     }
 
     //Array of moves eg. when at position (3,3), (-2,-1) will result in a potential move
-    Position[] knightMoves =
+    private final Position[] knightMoves =
     {       //bot4
             new Position(-2,-1),
             new Position(-1,-2),
