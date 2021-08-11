@@ -1,12 +1,10 @@
 package com.company.Pieces;
 
-import com.company.Board;
+import com.company.Board.Board;
 import com.company.Position;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class Pawn extends Piece{
 

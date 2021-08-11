@@ -1,9 +1,8 @@
 package com.company.Test;
 
-import com.company.Board;
+import com.company.Board.Board;
 import com.company.Pieces.Pawn;
-import com.company.Tile;
-import org.w3c.dom.ls.LSOutput;
+import com.company.Board.Tile;
 
 public class PawnTest {
 

@@ -1,10 +1,9 @@
 package com.company.Test;
 
 
-import com.company.Board;
+import com.company.Board.Board;
 import com.company.Pieces.*;
-import com.company.Player;
-import com.company.Tile;
+import com.company.Board.Tile;
 
 import java.util.Arrays;
 
