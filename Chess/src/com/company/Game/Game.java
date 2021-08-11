@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 /**
  * Game will run from this class
- * ekko yi ali shen kayn
  * 08/08/2021
  */
 
@@ -23,8 +22,8 @@ public class Game
 
         Board board = new Board();
 
-        Player player1 = new Player(true);
-        Player player2 = new Player(false);
+        Player whitePlayer = new Player(true);
+        Player blackPlayer = new Player(false);
 
         //record of moves
         ArrayList<String> whiteMoves = new ArrayList<>();
@@ -32,28 +31,33 @@ public class Game
 
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
 
-        String turn = "white";
+        System.out.println("===================================================");
+        System.out.println("======================Chess========================");
 
         //game loop
         while(true)
         {
-            if (turn.equals("white")){
-                System.out.println("White enter a move");
-                String whiteMove = scanner.nextLine();
-                System.out.println(whiteMove);
-                //do stuff
-                //do stuff
-                turn = "black";
-            }
-            else {
-                System.out.println("Black enter a move");
-                String blackMove = scanner.nextLine();
-                System.out.println(blackMove);
-                //do stuff
-                //do stuff
-                turn = "white";
-            }
+            Player currentPlayer = whitePlayer;
+
+            //Whites Move
+            System.out.println("White enter a move");
+            String whiteMove = scanner.nextLine();
+            System.out.println(whiteMove);
+            //do stuff
+            //do stuff
+
+            //Blacks Move
+            System.out.println("Black enter a move");
+            String blackMove = scanner.nextLine();
+            System.out.println(blackMove);
+            //do stuff
+            //do stuff
+
             System.out.println();
         }
     }
+
+    public static GameStatus getGameStatus()           { return gameStatus;   }
+    public static void setGameStatus(GameStatus status){ gameStatus = status; }
+
 }

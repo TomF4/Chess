@@ -5,6 +5,7 @@ public enum GameStatus {
         CHECK,
         CHECKMATE,
         DRAW,
-        WIN,
+        WHITE_WIN,
+        BLACK_WIN,
         LOSS,
 }
