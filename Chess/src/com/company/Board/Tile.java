@@ -13,18 +13,18 @@ import com.company.Position;
 public class Tile
 {
 
-    Position m_tilePos = new Position();
-    Piece    m_piece;
+    Position tilePos = new Position();
+    Piece piece;
 
     public Tile(int x,int y, Piece piece)
     {
-        m_tilePos.setX(x);
-        m_tilePos.setY(y);
-        m_piece = piece;
+        tilePos.setX(x);
+        tilePos.setY(y);
+        this.piece = piece;
     }
 
     public Piece getPiece(){
-        return this.m_piece;
+        return this.piece;
     }
 
 
@@ -32,8 +32,8 @@ public class Tile
     @Override
     public String toString() {
         return "Tile{" +
-                "tilePos=" + m_tilePos +
-                "," + m_piece +
+                "tilePos=" + tilePos +
+                "," + piece +
                 '}'+"\n";
     }
 }
