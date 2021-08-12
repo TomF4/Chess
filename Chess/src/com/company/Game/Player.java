@@ -5,11 +5,7 @@ package com.company.Game;
 
     tf 05/08/2021
  */
-
-import com.company.Board.Board;
 import com.company.Pieces.Piece;
-import com.company.Position;
-
 public class Player
 {
 

@@ -13,9 +13,11 @@ public class Rook extends Piece{
      */
     public Rook(boolean isWhite) {
         super(isWhite);
+        setPieceType(PieceType.ROOK);
     }
     public Rook(boolean isWhite,int x,int y){
         super(isWhite, x, y);
+        setPieceType(PieceType.ROOK);
     }
 
 
@@ -54,10 +56,5 @@ public class Rook extends Piece{
                 moves.add(potentialMove);
         }
         return moves;
-    }
-
-    @Override
-    public String toString() {
-        return "Rook" + super.toString();
     }
 }

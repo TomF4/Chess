@@ -7,14 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Queen extends Piece{
+
+
     /**
      * @param isWhite is white or not
      */
     public Queen(boolean isWhite) {
         super(isWhite);
+        setPieceType(PieceType.QUEEN);
     }
     public Queen(boolean isWhite,int x,int y){
         super(isWhite, x, y);
+        setPieceType(PieceType.QUEEN);
     }
 
 
@@ -42,10 +46,5 @@ public class Queen extends Piece{
         queenMoves.addAll(rookMoves);
         queenMoves.addAll(bishopMoves);
         return queenMoves;
-    }
-
-    @Override
-    public String toString() {
-        return "Queen" + super.toString();
     }
 }

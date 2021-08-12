@@ -16,34 +16,36 @@ import java.util.List;
  */
 public abstract class Piece
 {
-
-
-    private boolean  m_isWhite = false;
-    private boolean  m_isEliminated = false;
-    private Position m_pos = new Position();
+    private boolean  isWhite = false;
+    private boolean  isEliminated = false;
+    private Position pos = new Position();
+    private PieceType pieceType;
 
     /**
      * @param isWhite is white or not
      */
     public Piece(boolean isWhite)
     {
-        m_isWhite = isWhite;
+        this.isWhite = isWhite;
     }
     public Piece(boolean isWhite,int x,int y)
     {
-        m_isWhite = isWhite;
-        m_pos.setX(x);
-        m_pos.setY(y);
+        this.isWhite = isWhite;
+        pos.setX(x);
+        pos.setY(y);
     }
 
     // get/set
-    public boolean  isWhite()       { return this.m_isWhite; }
-    public boolean  isEliminated()  { return this.m_isEliminated; }
-    public Position getPos()        { return this.m_pos; }
+    public boolean  isWhite()       { return this.isWhite; }
+    public boolean  isEliminated()  { return this.isEliminated; }
+    public Position getPos()        { return this.pos; }
+    public PieceType getPieceType() { return this.pieceType; }
 
-    public void setWhite()          { this.m_isWhite = true; }
-    public void eliminate()         { this.m_isEliminated = true; }
-    public void setPos(int x,int y) { this.m_pos.setX(x);this.m_pos.setY(y); }
+
+    public void setWhite()          { this.isWhite = true; }
+    public void eliminate()         { this.isEliminated = true; }
+    public void setPos(int x,int y) { this.pos.setX(x);this.pos.setY(y); }
+    public void setPieceType(PieceType pieceType) { this.pieceType = pieceType; }
 
 
     /**
@@ -58,16 +60,16 @@ public abstract class Piece
     }
 
 
-    //TODO moves this kind of method to the game/board class (testing atm)
+    //TODO moves this kind of method to the game/board class (testing atm) as well as a colour check thing
     public boolean isWithinBoard(Position position) {
         return position.getY() >= 0 && position.getX() >= 0 && position.getX() < 8 && position.getY() < 8; //within board
     }
 
     @Override
     public String toString() {
-        return "{" +
-                "White=" + m_isWhite + "," +
-                "Eliminated=" + m_isEliminated + "," +
-                 m_pos + "," + '}';
+        return pieceType+ "{" +
+                "White=" + isWhite + "," +
+                "Eliminated=" + isEliminated + "," +
+                pos + "," + "Type="+pieceType +'}';
     }
 }

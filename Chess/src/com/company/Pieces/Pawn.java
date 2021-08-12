@@ -8,14 +8,18 @@ import java.util.List;
 
 public class Pawn extends Piece{
 
+
+
     /**
      * @param isWhite is white or not
      */
     public Pawn(boolean isWhite) {
         super(isWhite);
+        setPieceType(PieceType.PAWN);
     }
     public Pawn(boolean isWhite,int x,int y){
         super(isWhite, x, y);
+        setPieceType(PieceType.PAWN);
     }
 
     private final Position[] pawnMoves =
@@ -48,10 +52,5 @@ public class Pawn extends Piece{
             }
         }
         return moves;
-    }
-
-    @Override
-    public String toString() {
-        return "Pawn" + super.toString();
     }
 }
