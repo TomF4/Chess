@@ -13,9 +13,11 @@ public class Bishop extends Piece{
      */
     public Bishop(boolean isWhite) {
         super(isWhite);
+        setPieceType(PieceType.BISHOP);
     }
     public Bishop(boolean isWhite,int x,int y){
         super(isWhite, x, y);
+        setPieceType(PieceType.BISHOP);
     }
 
     @Override
@@ -47,10 +49,5 @@ public class Bishop extends Piece{
                 moves.add(potentialMove);
         }
         return moves;
-    }
-
-    @Override
-    public String toString() {
-        return "Bishop" + super.toString();
     }
 }
