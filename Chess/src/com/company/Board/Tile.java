@@ -27,7 +27,6 @@ public class Tile
         return this.piece;
     }
 
-
     //TODO REMOVE \n
     @Override
     public String toString() {
