@@ -25,9 +25,11 @@ public class King extends Piece{
      */
     public King(boolean isWhite) {
         super(isWhite);
+        setPieceType(PieceType.KING);
     }
     public King(boolean isWhite,int x,int y){
         super(isWhite, x, y);
+        setPieceType(PieceType.KING);
     }
 
     @Override
@@ -42,11 +44,5 @@ public class King extends Piece{
             }
         }
         return moves;
-    }
-
-
-    @Override
-    public String toString() {
-        return "King" + super.toString();
     }
 }
