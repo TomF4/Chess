@@ -49,7 +49,7 @@ public class Game
         setGameStatus(GameStatus.PLAYING);
     }
 
-    //TODO maybe change this so it takes tiles instead of position do u need the player argument when there is a currentTurn???
+    //TODO maybe change this so it takes tiles instead of position.do u need the player argument when there is a currentTurn???
     /**
      * this method will move the piece
      * @param currentPlayer current player
@@ -68,11 +68,11 @@ public class Game
         //check to see if player is moving same colour piece
         if(!checkIfLegalMove(movingPiece,start,end))
             return false;
+        //TODO castling and en passant go here i guess
 
         return true;
     }
 
-    //TODO check whether piece is obstructed!!!!!!!!!!!!!
     /**
      * checks to see if the moves is within board, not same colour and whether piece is obstructed.
      * Method is most likely only used in "makeMove"
@@ -91,6 +91,7 @@ public class Game
             if(movePos == end) // moves is in the list
                 if(end.getY() >= 0 && end.getX() >= 0 && end.getX() < 8 && end.getY() < 8) //moves is within board
                     if (piece.isWhite() != board.getTile(end).getPiece().isWhite()) { // end piece is not same colour
+                        //TODO obstruction stuff go here
                         if(piece.getPieceType() == PieceType.KNIGHT) // knight cant be obstructed
                             return true;
                     }
