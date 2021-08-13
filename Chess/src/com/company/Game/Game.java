@@ -6,6 +6,7 @@ import com.company.Pieces.PieceType;
 import com.company.Position;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -49,7 +50,7 @@ public class Game
         setGameStatus(GameStatus.PLAYING);
     }
 
-    //TODO maybe change this so it takes tiles instead of position.do u need the player argument when there is a currentTurn???
+    //TODO maybe change this so it takes tiles instead of position.do u need the player argument when there is a currentTurn?
     /**
      * this method will move the piece
      * @param currentPlayer current player
@@ -66,32 +67,45 @@ public class Game
         Piece movingPiece = board.getTile(start).getPiece();
 
         //check to see if player is moving same colour piece
-        if(!checkIfLegalMove(movingPiece,start,end))
+        if(!checkIfLegalMove(move))
             return false;
         //TODO castling and en passant go here i guess
 
         return true;
     }
 
+    //TODO same colour moves removed but obstruction needs to be done still
     /**
      * checks to see if the moves is within board, not same colour and whether piece is obstructed.
      * Method is most likely only used in "makeMove"
-     * @param piece piece being moved
-     * @param start tile pos start
-     * @param end ending pos
-     * @return true if move is possible
+     * @param move takes in the move to be played
+     * @return true if move can happen
      */
-    private boolean checkIfLegalMove(Piece piece,Position start,Position end)
+    private boolean checkIfLegalMove(Move move)
     {
         //get valid moves
-        List<Position> validMoves = piece.findValidMoves(board);
+        List<Position> validMoves = move.getPiecedMoved().findValidMoves(board);
+        Iterator<Position> iterator = validMoves.iterator();
+
+        //remove all same colour piece moves
+        while(iterator.hasNext()) {
+            Position pos = iterator.next();
+            if(board.getTile(pos).getPiece() != null)
+                if(board.getTile(pos).getPiece().isSameColour(move.getPiecedMoved())){
+                    iterator.remove();
+                }
+        }
+
+        Position end = move.getEnd().getTilePos();
+        Piece piece = move.getPiecedMoved();
         for (Position movePos: validMoves)
         {
             //bunch of move validity checking
             if(movePos == end) // moves is in the list
                 if(end.getY() >= 0 && end.getX() >= 0 && end.getX() < 8 && end.getY() < 8) //moves is within board
                     if (piece.isWhite() != board.getTile(end).getPiece().isWhite()) { // end piece is not same colour
-                        //TODO obstruction stuff go here
+                        //TODO obstruction stuff go here. maybe move it to the move clas or something?
+
                         if(piece.getPieceType() == PieceType.KNIGHT) // knight cant be obstructed
                             return true;
                     }

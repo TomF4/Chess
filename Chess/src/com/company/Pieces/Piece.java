@@ -65,6 +65,15 @@ public abstract class Piece
         return position.getY() >= 0 && position.getX() >= 0 && position.getX() < 8 && position.getY() < 8; //within board
     }
 
+    public boolean isSameColour(Piece piece){
+        if(this.isWhite && piece.isWhite)
+            return true;
+        else if(!this.isWhite && !piece.isWhite)
+            return true;
+        else
+            return false;
+    }
+
     @Override
     public String toString() {
         return pieceType+ "{" +

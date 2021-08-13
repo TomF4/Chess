@@ -26,7 +26,9 @@ public class Tile
     public Piece getPiece(){
         return this.piece;
     }
-
+    public Position getTilePos(){
+        return this.tilePos;
+    }
     //TODO REMOVE \n
     @Override
     public String toString() {
