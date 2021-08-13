@@ -20,4 +20,11 @@ public class Move {
         this.end        = end;
         this.pieceMoved = start.getPiece();
     }
+
+    public Player getPlayer(){ return this.player; }
+    public Tile   getStart() { return this.start;  }
+    public Tile   getEnd()   { return this.end;    }
+
+    public Piece   getPiecedMoved()    { return this.pieceMoved;      }
+    public Piece   getPieceEliminated(){ return this.pieceEliminated; }
 }
