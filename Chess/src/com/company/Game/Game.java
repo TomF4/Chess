@@ -88,6 +88,8 @@ public class Game
         Iterator<Position> iterator = validMoves.iterator();
 
         //remove all same colour piece moves
+        /*Doesnt seem to be needed and is wasteful and overcomplicated
+        * if (piece.isWhite() != board.getTile(end).getPiece().isWhite()) workds*/
         while(iterator.hasNext()) {
             Position pos = iterator.next();
             if(board.getTile(pos).getPiece() != null)
@@ -100,12 +102,11 @@ public class Game
         Piece piece = move.getPiecedMoved();
         for (Position movePos: validMoves)
         {
-            //bunch of move validity checking
+            //bunch of move valid
             if(movePos == end) // moves is in the list
                 if(end.getY() >= 0 && end.getX() >= 0 && end.getX() < 8 && end.getY() < 8) //moves is within board
                     if (piece.isWhite() != board.getTile(end).getPiece().isWhite()) { // end piece is not same colour
                         //TODO obstruction stuff go here. maybe move it to the move clas or something?
-
                         if(piece.getPieceType() == PieceType.KNIGHT) // knight cant be obstructed
                             return true;
                     }
@@ -117,12 +118,6 @@ public class Game
     public static void setGameStatus(GameStatus status){ gameStatus = status; }
 
 }
-
-
-
-
-
-
 /*
      Board board = new Board();
         Move move;

@@ -38,8 +38,18 @@ public class Rook extends Piece{
                 moves.add(potentialMove);
         }
         //negative left
-        for(int i = this.getPos().getX();i > 0; i--){
-            potentialMove = this.getPos().add(-i,0);
+       // int x = 0;
+        //for(int i = this.getPos().getX();i > 0; i--){
+        //    potentialMove = this.getPos().add(-i,0);
+        //    if(isWithinBoard(potentialMove))
+        //        moves.add(potentialMove);
+        //}
+        //TODO FINISH THIS
+        int x = 0;
+        for(int i = 0; i < board.SIZE;i++){
+            x++;
+            potentialMove = this.getPos().add(-x,0);
+            System.out.println(potentialMove + "hehe");
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
