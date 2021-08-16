@@ -20,10 +20,9 @@ public class Rook extends Piece{
         setPieceType(PieceType.ROOK);
     }
 
-
-    //TODO is there a better way than 4 for loops
     /**
      * Loops from current pos to find all moves
+     * feels like a better way to do this exits
      * @param board current board
      * @return rook moves
      */
@@ -32,35 +31,25 @@ public class Rook extends Piece{
         final List<Position> moves = new ArrayList<>();
         Position potentialMove;
         //positive right
-        for(int i = this.getPos().getX(); i < board.SIZE;i++){
+        for(int i = 0; i < board.SIZE;i++){
             potentialMove = this.getPos().add(i,0);
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
-        //negative left
-       // int x = 0;
-        //for(int i = this.getPos().getX();i > 0; i--){
-        //    potentialMove = this.getPos().add(-i,0);
-        //    if(isWithinBoard(potentialMove))
-        //        moves.add(potentialMove);
-        //}
-        //TODO FINISH THIS
-        int x = 0;
         for(int i = 0; i < board.SIZE;i++){
-            x++;
-            potentialMove = this.getPos().add(-x,0);
+            potentialMove = this.getPos().add(-i,0);
             System.out.println(potentialMove + "hehe");
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         //positive up
-        for(int i = this.getPos().getY(); i < board.SIZE;i++){
+        for(int i = 0; i < board.SIZE;i++){
             potentialMove = this.getPos().add(0,i);
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         //negative down
-        for(int i = this.getPos().getY();i > 0; i--){
+        for(int i = 0; i < board.SIZE;i++){
             potentialMove = this.getPos().add(0,-i);
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
@@ -68,3 +57,13 @@ public class Rook extends Piece{
         return moves;
     }
 }
+
+/*
+        //negative left
+       // int x = 0;
+        //for(int i = this.getPos().getX();i > 0; i--){
+        //    potentialMove = this.getPos().add(-i,0);
+        //    if(isWithinBoard(potentialMove))
+        //        moves.add(potentialMove);
+        //}
+ */
