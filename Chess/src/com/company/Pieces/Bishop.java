@@ -25,25 +25,25 @@ public class Bishop extends Piece{
         final List<Position> moves = new ArrayList<>();
         Position potentialMove;
         //positive up-right
-        for(int i = 0; i < board.SIZE;i++){
+        for(int i = 1; i < board.SIZE;i++){
             potentialMove = this.getPos().add(i,i);
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         //negative up-left
-        for(int i = 0; i < board.SIZE;i++){
+        for(int i = 1; i < board.SIZE;i++){
             potentialMove = this.getPos().add(-i,i);
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         //positive down-left
-        for(int i = 0; i < board.SIZE;i++){
+        for(int i = 1; i < board.SIZE;i++){
             potentialMove = this.getPos().add(-i,-i);
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         //negative down
-        for(int i = 0; i < board.SIZE;i++){
+        for(int i = 1; i < board.SIZE;i++){
             potentialMove = this.getPos().add(i,-i);
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);

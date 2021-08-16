@@ -30,27 +30,23 @@ public class Rook extends Piece{
     public List<Position> findValidMoves(Board board) {
         final List<Position> moves = new ArrayList<>();
         Position potentialMove;
-        //positive right
-        for(int i = 0; i < board.SIZE;i++){
-            potentialMove = this.getPos().add(i,0);
+        for(int i = 1; i < board.SIZE;i++){
+            potentialMove = this.getPos().add(i,0);  //positive right
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
-        for(int i = 0; i < board.SIZE;i++){
-            potentialMove = this.getPos().add(-i,0);
-            System.out.println(potentialMove + "hehe");
+        for(int i = 1; i < board.SIZE;i++){
+            potentialMove = this.getPos().add(-i,0); //negative left
+                if(isWithinBoard(potentialMove))
+                moves.add(potentialMove);
+        }
+        for(int i = 1; i < board.SIZE;i++){
+            potentialMove = this.getPos().add(0,i);  //positive up
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
-        //positive up
-        for(int i = 0; i < board.SIZE;i++){
-            potentialMove = this.getPos().add(0,i);
-            if(isWithinBoard(potentialMove))
-                moves.add(potentialMove);
-        }
-        //negative down
-        for(int i = 0; i < board.SIZE;i++){
-            potentialMove = this.getPos().add(0,-i);
+        for(int i = 1; i < board.SIZE;i++){
+            potentialMove = this.getPos().add(0,-i); //negative down
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
