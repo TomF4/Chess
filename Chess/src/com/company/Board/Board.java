@@ -79,24 +79,7 @@ public class Board
         boardArr[6][7] = new Tile(6,7, new Knight(false,6,7));
         boardArr[7][7] = new Tile(7,7, new Rook  (false,7,7));
     }
-    public ArrayList<Piece> getWhitePieces()
-    {
-        ArrayList<Piece> whitePieces = new ArrayList<>();
-        for (int i = 0; i < 8; i++)
-            whitePieces.add(boardArr[i][0].piece);
-        for (int i = 0; i < 8; i++)
-            whitePieces.add(boardArr[i][1].piece);
-        return whitePieces;
-    }
-    public ArrayList<Piece> getBlackPieces()
-    {
-        ArrayList<Piece> blackPieces = new ArrayList<>();
-        for (int i = 0; i < 8; i++)
-            blackPieces.add(boardArr[i][0].piece);
-        for (int i = 0; i < 8; i++)
-            blackPieces.add(boardArr[i][1].piece);
-        return blackPieces;
-    }
+
     /**
      * Return a tile. Method will be used a lot to refer to individual squares and pieces on the board.
      * @param pos position (x,y)

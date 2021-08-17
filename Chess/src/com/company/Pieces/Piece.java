@@ -3,6 +3,7 @@ package com.company.Pieces;
 import com.company.Board.Board;
 import com.company.Position;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -55,6 +56,14 @@ public abstract class Piece
      */
     public abstract List<Position> findValidMoves(Board board);
 
+    public void findObstruction(Position finalPos,Piece piece, Board board)
+    {
+        List<Position> moves = piece.findValidMoves(board);
+        if(moves.contains(finalPos))
+            System.out.println("hello");;
+    }
+
+
     public void printValidMoves(Board board){
         System.out.println("Possible Moves"+this.findValidMoves(board).toString());
     }
@@ -79,6 +88,6 @@ public abstract class Piece
         return pieceType+ "{" +
                 "White=" + isWhite + "," +
                 "Eliminated=" + isEliminated + "," +
-                pos + "," + "Type="+pieceType +'}';
+                pos + "," +'}';
     }
 }

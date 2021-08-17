@@ -90,13 +90,13 @@ public class Game
         //remove all same colour piece moves
         /*Doesnt seem to be needed and is wasteful and overcomplicated
         * if (piece.isWhite() != board.getTile(end).getPiece().isWhite()) workds*/
-        while(iterator.hasNext()) {
-            Position pos = iterator.next();
-            if(board.getTile(pos).getPiece() != null)
-                if(board.getTile(pos).getPiece().isSameColour(move.getPiecedMoved())){
-                    iterator.remove();
-                }
-        }
+       //while(iterator.hasNext()) {
+       //    Position pos = iterator.next();
+       //    if(board.getTile(pos).getPiece() != null)
+       //        if(board.getTile(pos).getPiece().isSameColour(move.getPiecedMoved())){
+       //            iterator.remove();
+       //        }
+       //}
 
         Position end = move.getEnd().getTilePos();
         Piece piece = move.getPiecedMoved();
@@ -106,9 +106,11 @@ public class Game
             if(movePos == end) // moves is in the list
                 if(end.getY() >= 0 && end.getX() >= 0 && end.getX() < 8 && end.getY() < 8) //moves is within board
                     if (piece.isWhite() != board.getTile(end).getPiece().isWhite()) { // end piece is not same colour
-                        //TODO obstruction stuff go here. maybe move it to the move clas or something?
                         if(piece.getPieceType() == PieceType.KNIGHT) // knight cant be obstructed
                             return true;
+                        //TODO obstruction stuff go here. maybe move it to the move clas or something? Use subtract
+                        //subtract the destination from the source position to find the movement vector
+
                     }
         }
         return false;
