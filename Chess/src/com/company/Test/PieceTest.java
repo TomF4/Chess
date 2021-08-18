@@ -4,6 +4,7 @@ package com.company.Test;
 import com.company.Board.Board;
 import com.company.Pieces.*;
 import com.company.Board.Tile;
+import com.company.Position;
 
 import java.util.Arrays;
 
@@ -44,9 +45,9 @@ public class PieceTest {
 
         System.out.println("=======================");
         System.out.println("=======Pawn Test======");
-        Pawn pawn;
-        pawn = (Pawn) boardArray[1][1].getPiece();
-        pawn.printValidMoves(board);
+        //Pawn pawn;
+        //pawn = (Pawn) boardArray[1][1].getPiece();
+        //pawn.printValidMoves(board);
         System.out.println("=======================");
         System.out.println("=======================\n");
 
@@ -81,5 +82,8 @@ public class PieceTest {
         king.printValidMoves(board);
         System.out.println("=======================");
         System.out.println("=======================\n");
+
+
+        System.out.println(bishop.isObstructed(board, bishop.getPos(), new Position(7, 5)));
     }
 }

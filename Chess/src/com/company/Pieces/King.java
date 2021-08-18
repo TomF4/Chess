@@ -45,4 +45,9 @@ public class King extends Piece{
         }
         return moves;
     }
+
+    @Override
+    public boolean isObstructed(Board board, Position origin, Position destination) {
+        return false;
+    }
 }

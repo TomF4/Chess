@@ -29,10 +29,6 @@ public class Game
     private ArrayList<Move> movesPlayed;
     private Player currentTurn;
 
-    public static void main(String[] args)
-    {
-    }
-
     /**
      * initialises the board and player turn (resets the game)
      */
@@ -85,33 +81,27 @@ public class Game
     {
         //get valid moves
         List<Position> validMoves = move.getPiecedMoved().findValidMoves(board);
-        Iterator<Position> iterator = validMoves.iterator();
 
-        //remove all same colour piece moves
-        /*Doesnt seem to be needed and is wasteful and overcomplicated
-        * if (piece.isWhite() != board.getTile(end).getPiece().isWhite()) workds*/
-       //while(iterator.hasNext()) {
-       //    Position pos = iterator.next();
-       //    if(board.getTile(pos).getPiece() != null)
-       //        if(board.getTile(pos).getPiece().isSameColour(move.getPiecedMoved())){
-       //            iterator.remove();
-       //        }
-       //}
-
-        Position end = move.getEnd().getTilePos();
+        Position originPos = move.getStart().getTilePos();
+        Position endPos = move.getEnd().getTilePos();
         Piece piece = move.getPiecedMoved();
+
         for (Position movePos: validMoves)
         {
-            //bunch of move valid
-            if(movePos == end) // moves is in the list
-                if(end.getY() >= 0 && end.getX() >= 0 && end.getX() < 8 && end.getY() < 8) //moves is within board
-                    if (piece.isWhite() != board.getTile(end).getPiece().isWhite()) { // end piece is not same colour
-                        if(piece.getPieceType() == PieceType.KNIGHT) // knight cant be obstructed
-                            return true;
-                        //TODO obstruction stuff go here. maybe move it to the move clas or something? Use subtract
-                        //subtract the destination from the source position to find the movement vector
+            //if the end position is in the list of moves
+            if(endPos == movePos){
+                //if within board and is not same colour
+                if (Board.isWithinBoard(endPos) && piece.isWhite() != board.getTile(endPos).getPiece().isWhite())
+                {
+                    if (piece.getPieceType() == PieceType.KNIGHT) // knight cant be obstructed
+                        return true;
 
-                    }
+                    if(piece.isObstructed(board, originPos, endPos))
+                        return true;
+                }else{ //piece is same colour
+                    return false;
+                }
+            }
         }
         return false;
     }
@@ -156,4 +146,18 @@ public class Game
 
             System.out.println();
         }
- */
+
+
+                Iterator<Position> iterator = validMoves.iterator();
+
+        //remove all same colour piece moves
+        /*Doesnt seem to be needed and is wasteful and overcomplicated
+        * if (piece.isWhite() != board.getTile(end).getPiece().isWhite()) workds*/
+//while(iterator.hasNext()) {
+//    Position pos = iterator.next();
+//    if(board.getTile(pos).getPiece() != null)
+//        if(board.getTile(pos).getPiece().isSameColour(move.getPiecedMoved())){
+//            iterator.remove();
+//        }
+//}
+

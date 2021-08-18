@@ -36,6 +36,13 @@ public class Position
      * @return return a new position
      */
     public Position add(Position posA) { return new Position(this.getX()+posA.getX(),this.getY()+posA.getY()); }
+    /**
+     * create a new position from adding ints to x,y
+     * @param x x to be added
+     * @param y y to be added
+     * @return new position
+     */
+    public Position add(int x,int y) { return new Position(this.getX()+x,this.getY()+y); }
 
     /**
      * This method will mainly be used to find obstructions by returning a vector between the DESTINATION and the origin
@@ -44,13 +51,7 @@ public class Position
      */
     public Position subtract(Position posA) { return new Position(this.getX()- posA.getX(),this.getY()-posA.getY()); }
 
-    /**
-     * create a new position from adding ints to x,y
-     * @param x x to be added
-     * @param y y to be added
-     * @return new position
-     */
-    public Position add(int x,int y) { return new Position(this.getX()+x,this.getY()+y); }
+    public Position subtract(int x,int y)   { return new Position(this.getX()-x,this.getY()-y); }
 
     @Override
     public String toString() {

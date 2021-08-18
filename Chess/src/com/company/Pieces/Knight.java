@@ -48,4 +48,23 @@ public class Knight extends Piece{
         }
         return moves;
     }
+
+    /**
+     * piece cant be obstructed
+     * @param board current board
+     * @param origin origin pos
+     * @param destination destination pos
+     * @return will always return false for knight
+     */
+    @Override
+    public boolean isObstructed(Board board, Position origin, Position destination) {
+        if(board.getTile(destination).getPiece() != null)
+            if(board.getTile(destination).getPiece().isSameColour(this)){
+                System.out.println("Destination contains friendly");
+                return true;
+            }
+        return false;
+    }
+
+
 }

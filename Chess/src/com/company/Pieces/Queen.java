@@ -34,8 +34,8 @@ public class Queen extends Piece{
         final List<Position> queenMoves = new ArrayList<>();
 
         //create rook and bishop for reuse
-        Rook   rook   = new Rook(true);
-        Bishop bishop = new Bishop(true);
+        Rook   rook   = new Rook(this.isWhite());
+        Bishop bishop = new Bishop(this.isWhite());
         //set to this queens position
         rook.setPos(this.getPos().getX(), this.getPos().getY());
         bishop.setPos(this.getPos().getX(), this.getPos().getY());
@@ -46,5 +46,39 @@ public class Queen extends Piece{
         queenMoves.addAll(rookMoves);
         queenMoves.addAll(bishopMoves);
         return queenMoves;
+    }
+
+    /**
+     * reuses the rook and bishop code as queen is jujst both
+     * @param board current board
+     * @param origin origin pos
+     * @param destination destination pos
+     * @return true if blocked
+     */
+    @Override
+    public boolean isObstructed(Board board, Position origin, Position destination) {
+        Rook rook = new Rook(this.isWhite());
+        Bishop bishop = new Bishop(this.isWhite());
+
+        boolean movingDiagonal   = false;
+        boolean movingHorizontal = false;
+
+        Position differencePosition = destination.subtract(origin);
+        int dX = differencePosition.getX();
+        int dY = differencePosition.getY();
+
+        //rook only moves in either x or y not both
+        if(dX != 0 && dY != 0)
+            movingDiagonal = true;
+        else
+            movingHorizontal = true;
+
+        bishop.setPos(this.getPos().getX(), this.getPos().getY());
+        rook.setPos(this.getPos().getX(), this.getPos().getY());
+        if(movingDiagonal)
+            return bishop.isObstructed(board,origin,destination);
+        else if(movingHorizontal)
+            return rook.isObstructed(board,origin,destination);
+        return false;
     }
 }

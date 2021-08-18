@@ -20,7 +20,7 @@ public class Board
     //board dimensions
     private final int ROWS    = 8;
     private final int COLUMNS = 8;
-    public  final int SIZE    = 8;
+    public static final int SIZE = 8;
     //board array
     private final Tile[][] boardArr = new Tile[ROWS][COLUMNS];
 
@@ -89,6 +89,19 @@ public class Board
         return boardArr[pos.getX()][pos.getY()];
     }
 
+
+    public static boolean isWithinBoard(Position pos){
+        return pos.getY() >= 0 && pos.getX() >= 0 && pos.getX() < Board.SIZE && pos.getY() < Board.SIZE;
+    }
+
+    //TODO idk about this anymore :(
+    public boolean pieceOnTile(int x, int y){
+        Position pos = new Position(x,y);
+        if(this.getTile(pos).getPiece() == null)
+            return false;
+        else
+            return true;
+    }
 
     /**
      * Test method Delete l8 i guess
