@@ -37,8 +37,8 @@ public class Knight extends Piece{
     };
 
     @Override
-    public List<Position> findValidMoves(Board board) {
-        final List<Position> moves = new ArrayList<>();
+    public ArrayList<Position> findValidMoves(Board board) {
+        final ArrayList<Position> moves = new ArrayList<>();
         Position potentialMove;
 
         for(Position pos: knightMoves){

@@ -38,8 +38,8 @@ public class Pawn extends Piece{
      * @return list of moves for pawns
      */
     @Override
-    public List<Position> findValidMoves(Board board) {
-        final List<Position> moves = new ArrayList<>();
+    public ArrayList<Position> findValidMoves(Board board) {
+        final ArrayList<Position> moves = new ArrayList<>();
         Position potentialMove;
 
         for(Position pos: pawnMoves){

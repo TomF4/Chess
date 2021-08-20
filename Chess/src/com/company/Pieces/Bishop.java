@@ -21,29 +21,29 @@ public class Bishop extends Piece{
     }
 
     @Override
-    public List<Position> findValidMoves(Board board) {
-        final List<Position> moves = new ArrayList<>();
+    public ArrayList<Position> findValidMoves(Board board) {
+        final ArrayList<Position> moves = new ArrayList<>();
         Position potentialMove;
         //positive up-right
-        for(int i = 1; i < board.SIZE;i++){
+        for(int i = 1; i < Board.SIZE; i++){
             potentialMove = this.getPos().add(i,i);
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         //negative up-left
-        for(int i = 1; i < board.SIZE;i++){
+        for(int i = 1; i < Board.SIZE; i++){
             potentialMove = this.getPos().add(-i,i);
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         //positive down-left
-        for(int i = 1; i < board.SIZE;i++){
+        for(int i = 1; i < Board.SIZE; i++){
             potentialMove = this.getPos().add(-i,-i);
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
         //negative down
-        for(int i = 1; i < board.SIZE;i++){
+        for(int i = 1; i < Board.SIZE; i++){
             potentialMove = this.getPos().add(i,-i);
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);

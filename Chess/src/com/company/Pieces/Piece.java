@@ -4,7 +4,6 @@ import com.company.Board.Board;
 import com.company.Position;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /*
    abstract class for all pieces
@@ -54,7 +53,7 @@ public abstract class Piece
      * @param board current board
      * @return A list of positions that are WITHIN the size of the board
      */
-    public abstract List<Position> findValidMoves(Board board);
+    public abstract ArrayList<Position> findValidMoves(Board board);
 
     /**
      * searches for obstructions in the pieces path

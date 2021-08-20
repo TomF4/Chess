@@ -28,10 +28,10 @@ public class Queen extends Piece{
      * @return list of queen moves
      */
     @Override
-    public List<Position> findValidMoves(Board board) {
-        List<Position> rookMoves;
-        List<Position> bishopMoves;
-        final List<Position> queenMoves = new ArrayList<>();
+    public ArrayList<Position> findValidMoves(Board board) {
+        ArrayList<Position> rookMoves;
+        ArrayList<Position> bishopMoves;
+        final ArrayList<Position> queenMoves = new ArrayList<>();
 
         //create rook and bishop for reuse
         Rook   rook   = new Rook(this.isWhite());

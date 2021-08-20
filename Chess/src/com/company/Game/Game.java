@@ -20,7 +20,14 @@ import java.util.Scanner;
  */
 
 
+/*
+    TODO check and check mate
+    TODO cant mvoe if result in check
+    TODO castling
+    TODO pawn takes
 
+
+ */
 public class Game
 {
     private static GameStatus gameStatus = GameStatus.PLAYING;
@@ -45,8 +52,6 @@ public class Game
         movesPlayed.clear();
         setGameStatus(GameStatus.PLAYING);
     }
-
-    //TODO maybe change this so it takes tiles instead of position.do u need the player argument when there is a currentTurn?
     /**
      * this method will move the piece
      * @param currentPlayer current player
@@ -62,15 +67,16 @@ public class Game
         //get the piece to be moved from board array
         Piece movingPiece = board.getTile(start).getPiece();
 
-        //check to see if player is moving same colour piece
         if(!checkIfLegalMove(move))
             return false;
+
         //TODO castling and en passant go here i guess
+
+
 
         return true;
     }
 
-    //TODO same colour moves removed but obstruction needs to be done still
     /**
      * checks to see if the moves is within board, not same colour and whether piece is obstructed.
      * Method is most likely only used in "makeMove"
@@ -92,15 +98,10 @@ public class Game
             if(endPos == movePos){
                 //if within board and is not same colour
                 if (Board.isWithinBoard(endPos) && piece.isWhite() != board.getTile(endPos).getPiece().isWhite())
-                {
-                    if (piece.getPieceType() == PieceType.KNIGHT) // knight cant be obstructed
-                        return true;
-
                     if(piece.isObstructed(board, originPos, endPos))
                         return true;
-                }else{ //piece is same colour
+                else //piece is same colour
                     return false;
-                }
             }
         }
         return false;

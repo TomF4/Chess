@@ -27,25 +27,25 @@ public class Rook extends Piece{
      * @return rook moves
      */
     @Override
-    public List<Position> findValidMoves(Board board) {
-        final List<Position> moves = new ArrayList<>();
+    public ArrayList<Position> findValidMoves(Board board) {
+        final ArrayList<Position> moves = new ArrayList<>();
         Position potentialMove;
-        for(int i = 1; i < board.SIZE;i++){
+        for(int i = 1; i < Board.SIZE; i++){
             potentialMove = this.getPos().add(i,0);  //positive right
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
-        for(int i = 1; i < board.SIZE;i++){
+        for(int i = 1; i < Board.SIZE; i++){
             potentialMove = this.getPos().add(-i,0); //negative left
                 if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
-        for(int i = 1; i < board.SIZE;i++){
+        for(int i = 1; i < Board.SIZE; i++){
             potentialMove = this.getPos().add(0,i);  //positive up
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);
         }
-        for(int i = 1; i < board.SIZE;i++){
+        for(int i = 1; i < Board.SIZE; i++){
             potentialMove = this.getPos().add(0,-i); //negative down
             if(isWithinBoard(potentialMove))
                 moves.add(potentialMove);

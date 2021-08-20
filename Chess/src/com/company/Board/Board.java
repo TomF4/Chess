@@ -3,6 +3,7 @@ import com.company.Pieces.*;
 import com.company.Position;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /*
 
@@ -101,6 +102,27 @@ public class Board
             return false;
         else
             return true;
+    }
+
+    public List<Piece> getWhitePieces() {
+        ArrayList<Piece> whitePieces = new ArrayList<>();
+
+        for (int i = 0; i < ROWS;i++)
+            for(int j = 0; j < COLUMNS; j++){
+                if(boardArr[i][j].getPiece().isWhite())
+                    whitePieces.add(boardArr[i][j].getPiece());
+            }
+        return whitePieces;
+    }
+    public List<Piece> getBlackPieces() {
+        ArrayList<Piece> blackPieces = new ArrayList<>();
+
+        for (int i = 0; i < ROWS;i++)
+            for(int j = 0; j < COLUMNS; j++){
+                if(!boardArr[i][j].getPiece().isWhite())
+                    blackPieces.add(boardArr[i][j].getPiece());
+            }
+        return blackPieces;
     }
 
     /**
