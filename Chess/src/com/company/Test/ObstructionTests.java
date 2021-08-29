@@ -33,6 +33,10 @@ public class ObstructionTests {
         queen = (Queen) boardArray[3][0].getPiece();
         queen.printValidMoves(board);
 
+        Queen blackQueen;
+        blackQueen = (Queen) boardArray[3][7].getPiece();
+        blackQueen.printValidMoves(board);
+
         Pawn pawn;
         pawn = (Pawn) boardArray[1][1].getPiece();
         pawn.printValidMoves(board);
@@ -72,5 +76,17 @@ public class ObstructionTests {
         System.out.println(king.isObstructed(board, king.getPos(), new Position(3,0)));
         System.out.println("=======================");
         System.out.println("=======================\n");
+
+
+        System.out.println("=======================");
+        System.out.println("=======king in check Test======");
+        System.out.println(king.inCheck(board));
+        //System.out.println(blackQueen.isObstructed(board, blackQueen.getPos(), new Position(3,0)));
+        System.out.println("=======================");
+        System.out.println("=======================\n");
+
+
+        System.out.println(board.getBlackPieces());
+
     }
 }

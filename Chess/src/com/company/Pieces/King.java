@@ -93,24 +93,25 @@ public class King extends Piece{
     //TODO Check check all pieces valid moves. Check if king is in those valid moves
     public boolean inCheck(Board board){
 
-        List<Piece> pieces;
+        ArrayList<Piece> pieces;
+        ArrayList<Position> validMoves;
 
-        boolean isWhite = this.isWhite();
-
-        if(isWhite)
-            pieces = board.getWhitePieces();
-        else
+        if(this.isWhite())
             pieces = board.getBlackPieces();
+        else
+            pieces = board.getWhitePieces();
 
-        ArrayList<Position> validMoves = new ArrayList<>();
-
-
-        for (Piece piece:pieces) {
+        for (Piece piece : pieces) {
             validMoves = piece.findValidMoves(board);
-            if (validMoves.contains(this.getPos()))
-                System.out.println("???????????");
+            for(Position pos : validMoves){
+                if(pos.getX() == this.getPos().getX() && pos.getY() == this.getPos().getY()){
+                    if(!piece.isObstructed(board,piece.getPos(),this.getPos())){
+                        System.out.println("King in Check");
+                        return true;
+                    }
+                }
+            }
         }
-
         return false;
     }
 }

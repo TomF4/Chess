@@ -104,23 +104,26 @@ public class Board
             return true;
     }
 
-    public List<Piece> getWhitePieces() {
+    //return all the pieces based on colour
+    public ArrayList<Piece> getWhitePieces() {
         ArrayList<Piece> whitePieces = new ArrayList<>();
 
         for (int i = 0; i < ROWS;i++)
             for(int j = 0; j < COLUMNS; j++){
-                if(boardArr[i][j].getPiece().isWhite())
-                    whitePieces.add(boardArr[i][j].getPiece());
+                if(boardArr[i][j].getPiece() != null)
+                    if(boardArr[i][j].getPiece().isWhite())
+                        whitePieces.add(boardArr[i][j].getPiece());
             }
         return whitePieces;
     }
-    public List<Piece> getBlackPieces() {
+    public ArrayList<Piece> getBlackPieces() {
         ArrayList<Piece> blackPieces = new ArrayList<>();
 
         for (int i = 0; i < ROWS;i++)
             for(int j = 0; j < COLUMNS; j++){
-                if(!boardArr[i][j].getPiece().isWhite())
-                    blackPieces.add(boardArr[i][j].getPiece());
+                if(boardArr[i][j].getPiece() != null)
+                    if(!boardArr[i][j].getPiece().isWhite())
+                        blackPieces.add(boardArr[i][j].getPiece());
             }
         return blackPieces;
     }
