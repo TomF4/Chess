@@ -1,5 +1,4 @@
 # Chess
-Chess 
 Chess engine.
 
 Not finished.
