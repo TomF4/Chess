@@ -1,6 +1,6 @@
 # Chess
-Chess engine.
+Basic chess engine controlling movement of pieces and board generation.
 
-Not finished.
+Few test classes to test movement of pieces.
 
-Needs check, checkmate, castling.
+This project stills work as it is still not finished: Needs check, checkmate, castling, and en passant.
